@@ -40,7 +40,7 @@ function Navbar() {
           </svg>
         </div>
       </div>
-      <div className="absolute -z-10 top-[-200px] left-[400px] trainer-image">
+      <div className="absolute -z-10 top-[0] left-[130px] lg:top-[-200px] lg:left-[400px] trainer-image">
         <img
           src="../src/assets/images/person-header.jpg "
           alt=""

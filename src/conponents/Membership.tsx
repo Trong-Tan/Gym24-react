@@ -79,7 +79,7 @@ export default function Membership() {
   const activeMembership = memberships[activeIndex];
 
   return (
-    <div className="">
+    <div className="mb-35">
       <h2 className="text-5xl text-center mb-30">Gym membership</h2>
       <div className='hidden lg:block'>
         <div className="grid grid-cols-3 gap-16">

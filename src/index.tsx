@@ -5,6 +5,7 @@ import React from "react";
 import "./main.css";
 import Banner from "./conponents/Banner";
 import Membership from "./conponents/Membership";
+import Aboutus from "./conponents/Aboutus";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Banner />
       <Reason />
       <Membership />
+      <Aboutus />
     </div>
   );
 }
