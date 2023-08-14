@@ -4,13 +4,15 @@ import Navbar from "./conponents/Navbar";
 import React from "react";
 import "./main.css";
 import Banner from "./conponents/Banner";
+import Membership from "./conponents/Membership";
 
 function App() {
   return (
-    <div>
+    <div className="font-primary">
       <Navbar />
       <Banner />
       <Reason />
+      <Membership />
     </div>
   );
 }

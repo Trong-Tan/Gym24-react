@@ -1,11 +1,11 @@
 function Navbar() {
   return (
     <div className="relative ">
-      <div className=" lg:w-[1190px] w-auto lg:h-[23px] mt-[60px] mb-[90px]  text-[24px] font-normal font-[400] flex-shrink-[0] flex  text-[#FFF] relative">
-        <p className="lg:mr-[654px]  ">
+      <div className="mt-[60px] mb-[90px]  text-[24px] font-normal font-[400] flex-shrink-[0] flex  text-[#FFF] relative">
+        <p className=" ">
           GYM<span className="text-[#FAFF00]">24</span>
         </p>
-        <div className="option-navbar ml-auto mr-[50px] flex">
+        <div className="option-navbar ml-auto mr-[50px]  flex">
           <p className="mr-[75px] text-[12px] font-normal font-[300] hidden lg:block">
             Advantages
           </p>
@@ -16,7 +16,7 @@ function Navbar() {
           <p className="mr-[75px] text-[12px] font-normal font-[300] hidden lg:block">
             About
           </p>
-          <p className="mr-[75px] text-[12px] font-normal font-[300] hidden lg:block">
+          <p className="text-[12px] font-normal font-[300] hidden lg:block">
             Trainer
           </p>
         </div>
@@ -39,6 +39,12 @@ function Navbar() {
             />
           </svg>
         </div>
+      </div>
+      <div className="absolute -z-10 top-[-200px] left-[400px] trainer-image">
+        <img
+          src="../src/assets/images/person-header.jpg "
+          alt=""
+        />
       </div>
     </div>
   );
