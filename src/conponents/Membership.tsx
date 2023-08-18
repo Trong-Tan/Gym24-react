@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import check from '../assets/svgs/check.svg';
-import Button from './ui/Button'
-
+import Button from './ui/Button';
 
 const memberships = [
   {
@@ -65,15 +64,11 @@ export default function Membership() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const prevSlide = () => {
-    setActiveIndex((prevIndex) =>
-      prevIndex === 0 ? memberships.length - 1 : prevIndex - 1
-    );
+    setActiveIndex((prevIndex) => (prevIndex === 0 ? memberships.length - 1 : prevIndex - 1));
   };
 
   const nextSlide = () => {
-    setActiveIndex((prevIndex) =>
-      prevIndex === memberships.length - 1 ? 0 : prevIndex + 1
-    );
+    setActiveIndex((prevIndex) => (prevIndex === memberships.length - 1 ? 0 : prevIndex + 1));
   };
 
   const activeMembership = memberships[activeIndex];
@@ -81,95 +76,27 @@ export default function Membership() {
   return (
     <div className="mb-35">
       <h2 className="text-5xl text-center mb-30">Gym membership</h2>
-      <div className='hidden lg:block'>
-        <div className="grid grid-cols-3 gap-16">
-          {memberships.map(membership => (
-            <div
-              key={membership.title}
-              className="bg-neutral-800 rounded-[10px] flex justify-center items-center flex-col"
-            >
-              <div className="text-2xl text-center font-medium py-5 w-full border-b border-black">
-                <p>{membership.title}</p>
-                <p>{membership.price}</p>
-              </div>
-              <div className="px-6 mt-7 h-41 flex flex-col gap-4">
-                {membership.benefits.map(benefit => (
-                  <p key={benefit} className="flex gap-3">
-                    <img src={check} alt="" />
-                    <span>{benefit}</span>
-                  </p>
-                ))}
-              </div>
-              <Button className="py-1.5 w-fit my-9">Buy</Button>
+      <div className="flex  overflow-x-auto overflow-y-hidden custom-scrollbar scroll-smooth  lg:grid lg:grid-cols-3 gap-16 ">
+        {memberships.map((membership) => (
+          <div
+            key={membership.title}
+            className="bg-neutral-800 min-w-[270px] rounded-[10px] flex justify-center items-center flex-col">
+            <div className="text-2xl text-center font-medium py-5 w-full border-b border-black">
+              <p>{membership.title}</p>
+              <p>{membership.price}</p>
             </div>
-          ))}
-        </div>
-      </div>
-      <div id="carouselExampleControls" className="relative lg:hidden " data-te-carousel-init data-te-ride="carousel">
-        <div className="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
-          {memberships.map((membership, index) => (
-            <div
-              key={membership.title}
-              className={`relative float-left ${index === activeIndex ? '' : 'hidden'} w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none`}
-              data-te-carousel-item
-              data-te-carousel-active={index === activeIndex ? true : undefined}
-            >
-              <div
-              key={membership.title}
-              className="bg-neutral-800 rounded-[10px] flex justify-center items-center flex-col"
-            >
-              <div className="text-2xl text-center font-medium py-5 w-full border-b border-black">
-                <p>{membership.title}</p>
-                <p>{membership.price}</p>
-              </div>
-              <div className="px-6 mt-7 h-41 flex flex-col gap-4">
-                {membership.benefits.map(benefit => (
-                  <p key={benefit} className="flex gap-3">
-                    <img src={check} alt="" />
-                    <span>{benefit}</span>
-                  </p>
-                ))}
-              </div>
-              <Button className="py-1.5 w-fit my-9">Buy</Button>
+            <div className="px-6 mt-7 h-41 flex flex-col gap-4">
+              {membership.benefits.map((benefit) => (
+                <p key={benefit} className="flex gap-3">
+                  <img src={check} alt="" />
+                  <span>{benefit}</span>
+                </p>
+              ))}
             </div>
-            </div>
-          ))}
-        </div>
-
-        <button
-          className="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
-          type="button"
-          data-te-target="#carouselExampleControls"
-          data-te-slide="prev"
-          onClick={prevSlide}
-        >
-          <span className="inline-block h-8 w-8">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-6 w-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-            </svg>
-          </span>
-          <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-            Previous
-          </span>
-        </button>
-        <button
-          className="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
-          type="button"
-          data-te-target="#carouselExampleControls"
-          data-te-slide="next"
-          onClick={nextSlide}
-        >
-          <span className="inline-block h-8 w-8">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-6 w-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-            </svg>
-          </span>
-          <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-            Next
-          </span>
-        </button>
+            <Button className="py-1.5 w-fit my-9 mt-[80px]">Buy</Button>
+          </div>
+        ))}
       </div>
     </div>
-    
   );
 }

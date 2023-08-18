@@ -1,33 +1,34 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
-  content: ['./**/*.{html,tsx}'],
+  darkMode: "class",
+  content: ["./**/*.{html,tsx}"],
   theme: {
     extend: {
       fontFamily: {
-        primary: ['Poppins', 'sans-serif']
+        primary: ["Poppins", "sans-serif"],
       },
       colors: {
-        primary: '#FAFF00'
+        primary: "#FAFF00",
       },
       height: {
-        41: '10.25rem'
+        41: "10.25rem",
       },
       margin: {
-        106: '26.5rem',
-        62.5: '15.625rem',
-        61: '14rem',
-        30: '7.5rem',
-        35: '12rem'
+        106: "26.5rem",
+        62.5: "15.625rem",
+        61: "14rem",
+        30: "7.5rem",
+        35: "12rem",
       },
       padding: {
-        13: '3.25rem'
+        13: "3.25rem",
       },
       gap: {
-        30: '7.5rem',
-        18.75: '4.6875rem'
-      }
-    }
+        30: "7.5rem",
+        18.75: "4.6875rem",
+      },
+    },
   },
-  plugins: []
-}
+  extend: {},
+  plugins: [],
+};
