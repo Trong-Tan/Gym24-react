@@ -16,3 +16,10 @@
       linear-gradient(9deg, #000 0%, rgba(0, 0, 0, 0) 50%);
   }
   
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 3px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #718096;
+    border-radius: 4px;
+  }

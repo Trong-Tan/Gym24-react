@@ -54,7 +54,7 @@ export default function Staff() {
         {staffs.map((staff, index) => (
           <div key={index} className=" flex justify-center grid grid-flow-row gap-3 text-center ">
             <div className="bg-[#222] rounded-lg  p-3">
-              <img src={staff.Image} alt={`Staff ${index + 1}`} />
+              <img src={staff.Image} alt="" />
               <p className="text-[18px] font-[700] leading-normal">{staff.name}</p>
               <div className="grid grid-flow-col gap-9 justify-center items-center">
                 <img src={ig} alt="" />
